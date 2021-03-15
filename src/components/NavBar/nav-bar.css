@@ -5,6 +5,7 @@
 }
 .menu-logo {
     width: 12rem;
+    margin-right: 15rem;
 }
 .menu{
     display: flex;
@@ -12,7 +13,6 @@
     align-items: center;
     background-color:#F28123;
     padding: 1rem;
-    margin-bottom: 1rem;
 }
 h1 {
     text-align: center;
@@ -21,6 +21,7 @@ h1 {
     margin-bottom: 1rem;
 }
 .neon {
+    margin: 2rem;
 	color: #fff;
 	text-shadow:
 		0 0 5px rgba(0,178,255,1),
@@ -36,7 +37,12 @@ h1 {
 .menu-enlaces a{
     text-decoration: none;
     font-weight: 900;
+    margin: 20px;
     color: #563F1B;
+    align-content: center;
+}
+.menu-enlaces{
+align-content: center;
 }
 .menu-fotos {
     display: flex;
@@ -55,4 +61,7 @@ h1 {
 }
 nav img {
     width: 5vh;
+}
+.menu-carrito {
+    width: 4rem;
 }
