@@ -14,7 +14,7 @@ function App() {
       <ItemListContainer/>
         <img src={logo} className="App-logo" alt="logo" />
         
-        <p class="text-primary">
+        <p className="text-primary">
           Tienda <code> Online</code> 
         </p>
         <a

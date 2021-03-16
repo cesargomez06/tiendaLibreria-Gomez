@@ -9,7 +9,7 @@ export const NavBar = () => {
     return (
       <nav className="menu navbar navbar-expand-lg navbar-light">
       <a  href="/">
-      <img class="menu-logo" src={logoLibreria}/>
+      <img className="menu-logo" src={logoLibreria}/>
       </a>
       
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
