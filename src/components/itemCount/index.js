@@ -1,6 +1,6 @@
 import React, {useEffect, useState } from "react";
 
-export function ItemCount ( { stock, initial, onAdd }) {
+export function ItemCount ( { stock, initial, onAdd, greeting}) {
     const [count, setCount] = useState (parseInt(initial));
     useEffect(() => {
        setCount(parseInt(initial));
@@ -37,10 +37,11 @@ export function ItemCount ( { stock, initial, onAdd }) {
             </button>
           </div>
           <button
-            disabled={count >= 1}
+            disabled={count <= 0}
             className="btn btn-primary w-75"
             type="button"
-            onClick={onAdd}
+            onClick={onAdd,greeting}
+            
           >
             Agregar al carrito
           </button>

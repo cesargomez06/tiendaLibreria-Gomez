@@ -10,8 +10,8 @@ function App() {
       <NavBar />
       
       <header className="App-header">
-      <h1 className="neon">Tu librería online</h1>
-      <ItemListContainer/>
+      
+      <ItemListContainer greeting={"Bienvenido a Tu librería online"}/>
         <img src={logo} className="App-logo" alt="logo" />
         
         <p className="text-primary">
