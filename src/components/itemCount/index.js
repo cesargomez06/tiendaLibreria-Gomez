@@ -1,6 +1,6 @@
 import React, {useEffect, useState } from "react";
 
-export function ItemCount ( { stock, initial, onAdd, greeting}) {
+export function ItemCount ( { stock, initial, onAdd}) {
     const [count, setCount] = useState (parseInt(initial));
     useEffect(() => {
        setCount(parseInt(initial));
@@ -14,12 +14,15 @@ export function ItemCount ( { stock, initial, onAdd, greeting}) {
     const removeHandle = () => {
         setCount(count - 1);
     };
-
+    
+    const addTotal = () => {
+      onAdd(count)
+    }
     return (
         <div className=" flex-column align-content-strech">
           <div className="m-2 p-2 d-flex flex-row justify-content-around align-items-center border-secondary border rounded">
             <button
-              disabled={count <= 0}
+              disabled={count <= 1}
               className="btn btn-primary"
               type="button"
               onClick={removeHandle}
@@ -37,15 +40,17 @@ export function ItemCount ( { stock, initial, onAdd, greeting}) {
             </button>
           </div>
           <button
-            disabled={count <= 0}
+            disabled={count < 1}
             className="btn btn-primary w-75"
             type="button"
-            onClick={onAdd,greeting}
+            onClick={addTotal}
             
           >
             Agregar al carrito
           </button>
+          
         </div>
+        
       );
     }
     

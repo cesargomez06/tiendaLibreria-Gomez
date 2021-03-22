@@ -1,17 +1,16 @@
 import React from "react";
 import { ItemCount } from "../itemCount/index";
 
-const Card = ({title,img, paragraph}) => {
+const Card = ({count}) => {
+    
+    const seAgrego = (num) => {console.log("Se agrego un item con", num, "productos")};
+    
     return(
-        <div className="container">
-            <h2>{title}</h2>
-            <div className="container-img">
-                <img className="img-fluid" width="300rem" alt="Responsive image" src={img}/>
-            </div>
-            <p>{paragraph}</p>
-            <div className="container ">
+        <div className="container m-4 p-4">
+            
+            <div className="container col-md-8 ">
                 
-                <ItemCount stock="6" initial="2" />
+                <ItemCount stock={9} count={count} initial="1" onAdd={seAgrego} />
             </div> 
         </div>
     );
