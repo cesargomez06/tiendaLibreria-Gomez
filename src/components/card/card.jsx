@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ItemCount } from "../itemCount/index";
 
 const Card = ({count}) => {
@@ -12,6 +13,9 @@ const Card = ({count}) => {
                 
                 <ItemCount stock={9} count={count} initial="1" onAdd={seAgrego} />
             </div> 
+            <Link  to={"/contacto"}>
+                <p class="text-warning">Ir a la pagina de contacto</p>
+            </Link>
         </div>
     );
 };

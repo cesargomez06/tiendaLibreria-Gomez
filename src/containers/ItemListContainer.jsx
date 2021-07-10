@@ -1,27 +1,39 @@
-import * as React from "react";
-import Card from "../components/card/card";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom"; 
 import ItemList from "../components/ItemList/ItemList";
-import productList from "../mocks/productsList";
+import products from "../mocks/product";
 
 
 const ItemListContainer = ({ greeting }) => {
 
-    const [products, setProducts] = React.useState([])
+    const [items, setItems] = useState([])
 
-    React.useEffect(() => {
-        const myPromise = new Promise((resolve,reject) => {
-            setTimeout(() => resolve(productList), 3000);
+    const {categoryId} = useParams()
+
+    useEffect(() => {
+        const promesa = new Promise((resolve,reject) => {
+            setTimeout(() =>  {
+                if (categoryId) {
+                    const productsFilter = products.filter((product) => {
+                        return product.category.toString() === categoryId;
+                    });
+                    resolve(productsFilter);
+                } else resolve(products);
+                resolve(products);
+                }, 2000);
+            });
+            promesa.then((resultado) => {
+                setItems(resultado);
+            });
         });
-        myPromise.then((result) => setProducts(result));
-    }, []);
    
     
     return(
-        <div style={{display:"flex"}} >
+        <div style={{display:""}} >
            
 
            <h1 className="neon">{greeting}</h1>
-           <ItemList products={products}/>
+           <ItemList items={items}/>
            
            
         </div>
