@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { ItemCount } from "../itemCount/index";
 
 
@@ -11,12 +10,10 @@ const Card = ({count}) => {
     return(
         <div>
             
-            <div>
-            <ItemCount stock={9} count={count} initial="1" onAdd={seAgrego} />
+            <div className="container">
+            <ItemCount stock={9} count={count} initial="1" onAdd={seAgrego}/>
             </div> 
-            <Link  to={"/contacto"}>
-                <p className="text-warning">Ir a la pagina de contacto</p>
-            </Link>
+            
         </div>
     );
 };

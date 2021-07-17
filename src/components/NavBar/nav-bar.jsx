@@ -9,19 +9,19 @@ export const NavBar = () => {
     return (
       <nav className="menu navbar navbar-expand-lg navbar-light">
       <a  href="/">
-      <img className="menu-logo" src={logoLibreria} alt="logo de la libreria"/>
+      <img className="menu-logo " src={logoLibreria} alt="logo de la libreria"/>
       </a>
       
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className="navbar-nav enlaces menu-enlaces">
           <a className="nav-item nav-link active" href="/">
-            Escolar
+            Libreria escolar
           </a>
           <a className="nav-item nav-link" href="/">
-            Comercial
+            Librería artistica 
           </a>
           <a className="nav-item nav-link" href="/">
-            Artistica
+            Jugueteria
           </a>
         </div>
       </div>

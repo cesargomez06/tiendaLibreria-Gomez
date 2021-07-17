@@ -9,14 +9,14 @@ import ItemDetailContainer from './containers/ItemDetailContainer';
 function App() {
   return (
     <BrowserRouter>
-    <div className="App">
+    <div className="App ">
 
         <NavBar />
         <Switch>
           <Route exact path="/">
-            <header className="App-header">
-              <ItemListContainer greeting={"Bienvenido a Tu librería online"}/>     
-            </header>
+            
+              <ItemListContainer greeting={"Bienvenido a Tu librería y juguetería online"}/>     
+            
           </Route>
         
         {/* <NavLink to="/categoria/1234" activeClassName="seleccionado">Categorias</NavLink> */}
@@ -24,7 +24,7 @@ function App() {
           <Route path="/item/:id" component={ItemDetailContainer}/> 
            
         </Switch>
-        <footer> Derechos reservados Cesar Gomez</footer>
+        <footer className="derechos"> Derechos reservados Cesar Gomez</footer>
       
     </div>
     </BrowserRouter>

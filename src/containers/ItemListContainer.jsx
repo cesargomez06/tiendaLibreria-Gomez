@@ -29,11 +29,11 @@ const ItemListContainer = ({ greeting }) => {
    
     
     return(
-        <div  style={{display:""}} >
+        <div className="container bg-dark " style={{display:""}} >
            
 
            <h1 className="neon">{greeting}</h1>
-           <ItemList items={items}/>
+           <ItemList  items={items}/>
            
            
         </div>

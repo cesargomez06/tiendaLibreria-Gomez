@@ -10,16 +10,17 @@ import "./item.css";
 const Item = ({ item }) => {
     
     return (
-        <div className="container-fluid mb-2 pt-2 pl-0 pr-0 col-md-4 border border-primary">
-            <h3>{item.name}</h3>
-            <p>Precio: {item.price}</p>
-            <p>Stock: {item.stock}</p>
-            <img className="img-fluid col-md-6"src={item.img} alt={item.name}/>
+        <div className="col-md-6 border border-primary align-middle contenedor ">
+           
+           <h3 className="text-light display-6 tipo-letra ">{item.name}</h3>
+           <div >
             
-            <Link to={`/item/${item.id}` } className="btn btn-primary"> 
-            ver mas
+            <img className="container-sm rounded col-md-8 " src={item.img} alt={item.name}/>
+            
+            <Link to={`/item/${item.id}` } className="ver-mas"> 
+            Más info
             </Link>
-            
+            </div>
         </div>
         
     );
