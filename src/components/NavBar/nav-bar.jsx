@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import "./nav-bar.css";
 import logoLibreria from "../../imagenes/logoLibreria.png";
 import CartWidget from "../CartWidget/cart-widget";
@@ -9,7 +9,7 @@ export const NavBar = () => {
     return (
       <nav className="menu navbar navbar-expand-lg navbar-light">
       <a  href="/">
-      <img className="menu-logo" src={logoLibreria}/>
+      <img className="menu-logo" src={logoLibreria} alt="logo de la libreria"/>
       </a>
       
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">

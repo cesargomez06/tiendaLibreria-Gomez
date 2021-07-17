@@ -2,9 +2,9 @@ import './App.css';
 import NavBar from './components/NavBar/nav-bar.jsx';
 import React from "react";
 import ItemListContainer from './containers/ItemListContainer'
-import {BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
+import {BrowserRouter, Switch, Route,} from 'react-router-dom';
 import ItemDetailContainer from './containers/ItemDetailContainer';
-import ItemDetail from './containers/ItemDetail.jsx';
+//import ItemDetail from './containers/ItemDetail.jsx';
 
 function App() {
   return (
@@ -19,11 +19,10 @@ function App() {
             </header>
           </Route>
         
-        <NavLink to="/categoria/1234" activeClassName="seleccionado">Categorias</NavLink>
+        {/* <NavLink to="/categoria/1234" activeClassName="seleccionado">Categorias</NavLink> */}
 
-          <Route path="/item/:id"> 
-            <ItemDetailContainer/>
-          </Route>
+          <Route path="/item/:id" component={ItemDetailContainer}/> 
+           
         </Switch>
         <footer> Derechos reservados Cesar Gomez</footer>
       

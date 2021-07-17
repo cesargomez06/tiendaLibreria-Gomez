@@ -29,7 +29,7 @@ const ItemListContainer = ({ greeting }) => {
    
     
     return(
-        <div style={{display:""}} >
+        <div  style={{display:""}} >
            
 
            <h1 className="neon">{greeting}</h1>
