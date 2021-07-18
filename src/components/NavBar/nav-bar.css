@@ -21,15 +21,15 @@ h1 {
     margin-bottom: 1rem;
 }
 .neon {
-    font-size: 2rem;
-    margin: 2rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: 3rem;
 	color: #fff;
 	text-shadow:
 		0 0 5px rgba(0,178,255,1),
 		0 0 10px rgba(0,178,255,1),
 		0 0 20px rgba(0,178,255,1),
 		0 0 40px rgba(38,104,127,1),
-		0 0 80px rgba(38,104,127,1),
 		0 0 90px rgba(38,104,127,1),
 		0 0 100px rgba(38,104,127,1),
 		0 0 140px rgba(38,104,127,1),

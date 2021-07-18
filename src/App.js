@@ -14,9 +14,11 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path="/">
-            
               <ItemListContainer greeting={"Bienvenido a Tu librería y juguetería online"}/>     
-            
+          </Route>
+
+          <Route exact path="/category/:categoryId">
+            <ItemListContainer />
           </Route>
         
         {/* <NavLink to="/categoria/1234" activeClassName="seleccionado">Categorias</NavLink> */}

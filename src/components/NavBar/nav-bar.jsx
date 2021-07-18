@@ -2,8 +2,8 @@ import React from "react";
 import "./nav-bar.css";
 import logoLibreria from "../../imagenes/logoLibreria.png";
 import CartWidget from "../CartWidget/cart-widget";
-
-
+import {categories} from "../../mocks/categories.json"
+import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
     return (
@@ -12,19 +12,17 @@ export const NavBar = () => {
       <img className="menu-logo " src={logoLibreria} alt="logo de la libreria"/>
       </a>
       
-      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div className="navbar-nav enlaces menu-enlaces">
-          <a className="nav-item nav-link active" href="/">
-            Libreria escolar
-          </a>
-          <a className="nav-item nav-link" href="/">
-            Librería artistica 
-          </a>
-          <a className="nav-item nav-link" href="/">
-            Jugueteria
-          </a>
-        </div>
+      <div className="collapse navbar-collapse navbar-nav enlaces menu-enlaces" id="navbarNavAltMarkup">
+      {categories.map((cat)=>(
+        <NavLink
+         to= {`/category/${cat.id}`}
+         key={cat.id}
+         className="nav-item nav-link ">
+         {cat.title}
+         </NavLink>
+        ))}
       </div>
+      
       <CartWidget />
 
       <button
