@@ -1,6 +1,7 @@
-import React, {useEffect, useState } from "react";
+import React, {useContext, useEffect, useState } from "react";
+import { CartContext } from "../../Context/CartContext";
 
-export function ItemCount ( { stock, initial, onAdd, item}) {
+export function ItemCount ( { id, name, des, price, stock, initial, onAdd, item}) {
     const [count, setCount] = useState (parseInt(initial));
     useEffect(() => {
        setCount(parseInt(initial));
@@ -18,6 +19,19 @@ export function ItemCount ( { stock, initial, onAdd, item}) {
     const addTotal = () => {
       onAdd(count)
     }
+    const {agregarAlCarrito,carrito} = useContext(CartContext)
+
+    const handleAgregar = () => {
+        agregarAlCarrito({
+            name,
+            price,
+            id
+
+        })
+    }
+
+    
+
     return (
         <div className=" flex-column align-content-strech align-items-center ">
           <div className="m-2 p-2 d-flex flex-row justify-content-between  border-secondary border rounded ">
