@@ -1,34 +1,23 @@
 import React, {useContext, useEffect, useState } from "react";
 import { CartContext } from "../../Context/CartContext";
 
-export function ItemCount ( { id, name, des, price, stock, initial, onAdd, item}) {
-    const [count, setCount] = useState (parseInt(initial));
-    useEffect(() => {
+export function ItemCount ( { stock, count, setCount}) {
+    
+    /*useEffect(() => {
        setCount(parseInt(initial));
         return;
-    }, [initial]);
+    }, [initial]);*/
     
-    const addHandle = () => {
+    const sumar = () => {
         setCount (count + 1);
     };
 
-    const removeHandle = () => {
+    const restar = () => {
         setCount(count - 1);
     };
     
-    const addTotal = () => {
-      onAdd(count)
-    }
-    const {agregarAlCarrito,carrito} = useContext(CartContext)
-
-    const handleAgregar = () => {
-        agregarAlCarrito({
-            name,
-            price,
-            id
-
-        })
-    }
+    
+    
 
     
 
@@ -39,7 +28,7 @@ export function ItemCount ( { id, name, des, price, stock, initial, onAdd, item}
               disabled={count <= 1}
               className="btn btn-primary "
               type="button"
-              onClick={removeHandle}
+              onClick={restar}
             >
               -
             </button>
@@ -48,21 +37,13 @@ export function ItemCount ( { id, name, des, price, stock, initial, onAdd, item}
               disabled={count >= stock}
               className="btn btn-primary "
               type="button"
-              onClick={addHandle}
+              onClick={sumar}
             >
               +
             </button>
+           
           </div>
-          <button
-            
-            disabled={count < 1}
-            className="btn btn-primary w-50 ver-mas"
-            type="button"
-            onClick={addTotal}
-            
-          >
-            Agregar al carrito
-          </button>
+          
           
         </div>
         

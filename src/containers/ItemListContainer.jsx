@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"; 
 import ItemList from "../components/ItemList/ItemList";
 import products from "../mocks/product";
-
+import { PacmanLoader } from "react-spinners";
 
 const ItemListContainer = ({ greeting }) => {
-
+    const [isLoading, setIsLoading] = useState(true);
     const [items, setItems] = useState([])
 
     const {categoryId} = useParams()
@@ -20,6 +20,7 @@ const ItemListContainer = ({ greeting }) => {
                     resolve(productsFilter);
                 } else resolve(products);
                 resolve(products);
+                setIsLoading(false)
                 }, 2000);
             });
             promesa.then((resultado) => {
@@ -30,8 +31,9 @@ const ItemListContainer = ({ greeting }) => {
     
     return(
         <div className="container bg-dark " style={{display:""}} >
-           <h1 className="neon">{greeting}</h1>
-           <ItemList  items={items}/>           
+           <h1 className="neon" margin={2}>{greeting}</h1>
+           {isLoading===true? <PacmanLoader margin={1} type={"PacmanLoader"}color={"#007bff"} size={35}/>:<ItemList  items={items}/>    }
+                  
         </div>
 
     );

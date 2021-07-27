@@ -5,6 +5,7 @@ import ItemListContainer from './containers/ItemListContainer'
 import {BrowserRouter, Switch, Route,} from 'react-router-dom';
 import ItemDetailContainer from './containers/ItemDetailContainer';
 import { CartProvider } from './Context/CartContext';
+import Loader from 'react-spinners/ClipLoader';
 //import ItemDetail from './containers/ItemDetail.jsx';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
 
           <Route exact path="/category/:categoryId">
             <ItemListContainer />
+            
           </Route>
         
         {/* <NavLink to="/categoria/1234" activeClassName="seleccionado">Categorias</NavLink> */}
