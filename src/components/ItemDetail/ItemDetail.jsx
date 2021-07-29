@@ -22,9 +22,9 @@ const ItemDetail = ({ item }) => {
         <div className="container  bg-dark  p-4 card">
             
             <div className="container  col-md-8 card-body text-light   ">
-                <h3 className="card-title font-weight-bold tipo-letra">{item.name}</h3>
-                <p className="card-text">Descripción:{item?.des}</p>
-                <p className="card-text">Precio: ${item?.price}</p>
+                <h3 className="card-title font-weight-bold tipo-letra">{item?.nombre}</h3>
+                <p className="card-text">Descripción:{item?.desc}</p>
+                <p className="card-text">Precio: ${item?.precio}</p>
                 <p className="card-text">Stock: {item?.stock}</p>
                 <img className="img-fluid col-md-6"src={item?.img} alt={item.name}/>
                 { count === 0 ? 

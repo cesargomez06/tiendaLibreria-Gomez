@@ -14,6 +14,16 @@
     background-color:#F5fa8f;
     padding: 1rem;
 }
+.dl, ol, ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    cursor:pointer;
+    text-decoration: none;
+}
+.dl, ol, ul, a:active {
+    text-decoration: none;
+}
 h1 {
     text-align: center;
     color: #563F1B;
@@ -66,3 +76,30 @@ nav img {
 .menu-carrito {
     width: 3rem;
 }
+header nav {
+    width: 30%;
+    margin-right: 50px;
+  }
+  
+  header ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline;
+    
+  }
+  
+  header {
+    background-color: #212529;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  

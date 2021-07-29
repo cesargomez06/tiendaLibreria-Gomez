@@ -14,7 +14,7 @@ const ItemListContainer = ({ greeting }) => {
     useEffect(() => {
 
         const db = getFirestore();
-        const itemsCollection = db.collection('items');
+        const itemsCollection = db.collection('productos');
 
         console.log(itemsCollection);
 

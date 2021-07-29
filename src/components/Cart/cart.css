@@ -1,0 +1,130 @@
+.carrito_lista {
+    width: 60%;
+    margin: 0 auto;
+    color:white;
+  }
+  
+  .carrito__header {
+    margin: 50px 20px 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid white;
+    
+  }
+  
+  .carrito__total {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 20px 20px;
+    padding-top: 15px;
+    border-top: 1px solid white;
+  }
+  
+  .carrito__bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+  }
+  
+  .carrito__bottomVaciar {
+    margin-bottom: 10px;
+    font-size: 60%;
+    
+  }
+  
+  .carrito__bottomCheckout {
+    margin-bottom: 50px;
+  }
+  
+  .carrito__bottomCheckoutFinished {
+    position: fixed;
+    width: 30vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    color: white;
+    border: none;
+  }
+  
+  .carrito__item {
+    margin: 20px 20px;
+    display: flex;
+  }
+  
+  .carrito__itemImagenDiv {
+    width: 30%;
+  }
+  
+  .carrito__itemImagen {
+    width: 80%;
+    -webkit-box-shadow: 0 0 5px gray;
+            box-shadow: 0 0 5px gray;
+  }
+  
+  .carrito__itemDescripcion {
+    width: 35%;
+    text-align: left;
+    margin-left: 15px;
+  }
+  
+  .carrito__itemTitulo {
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+  
+  .carrito__itemAutor {
+    font-size: 0.75rem;
+    font-weight: 300;
+    margin-bottom: 5px;
+  }
+  
+  .carrito__itemPrecio {
+    width: 25%;
+    margin: auto 0;
+    text-align: right;
+  }
+  
+  .carrito__productoEliminar {
+    font-size: 0.7rem;
+    color: blue;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .carrito__Cantidad {
+    width: 25%;
+    border: none;
+  }
+  
+  .carrito__itemCantidad {
+    font-size: 0.875rem;
+    text-align: center;
+    width: 40%;
+    max-width: 35px;
+    height: 25px;
+    border: 1px solid lightgray;
+  }
+
+  .carrito__totalCalculo {
+      margin-left: 20px;
+  }
+
+  .carrito__form {
+    margin: 30px auto;
+    width: 30%;
+    text-align: left;
+  }
+
+.carrito__form div {
+  margin-bottom: 10px;
+}
+
+.carrito__form input {
+  height: 30px;
+  width: 100%;
+  margin-top: 5px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}

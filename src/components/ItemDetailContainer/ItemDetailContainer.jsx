@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 const getItems = (id) => {
     const db = getFirestore();
-    const itemsCollection = db.collection("items")
+    const itemsCollection = db.collection("productos")
 
     const item = itemsCollection.doc(id)
     return item.get();

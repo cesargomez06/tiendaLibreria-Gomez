@@ -2,7 +2,7 @@ import React from "react";
 import "./nav-bar.css";
 import logoLibreria from "../../imagenes/logoLibreria.png";
 import CartWidget from "../CartWidget/cart-widget";
-import {categories} from "../../mocks/categories.json"
+
 import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
@@ -12,18 +12,31 @@ export const NavBar = () => {
       <img className="menu-logo " src={logoLibreria} alt="logo de la libreria"/>
       </a>
       
-      <div className="collapse navbar-collapse navbar-nav enlaces menu-enlaces" id="navbarNavAltMarkup">
-      {categories.map((cat)=>(
-        <NavLink
-         to= {`/category/${cat.id}`}
-         key={cat.id}
-         className="nav-item nav-link ">
-         {cat.title}
-         </NavLink>
-        ))}
+      <div className="collapse navbar-collapse menu  menu-enlaces" id="navbarNavAltMarkup">
+      <ul>
+          <NavLink to="/">
+            <li>Inicio</li>
+          </NavLink>
+          <NavLink to="/category/escolar">
+            <li>Librería Escolar</li>
+            </NavLink>
+          <NavLink to="/category/artistica">
+            <li>Libreria artistica</li>
+            </NavLink>
+          <NavLink to="/category/juguetes">
+            <li>Juguetes</li>
+            </NavLink>
+          <NavLink to="/contacto">
+            <li>Contacto</li>
+            </NavLink>
+          <NavLink to="/cart">
+            <CartWidget />
+            </NavLink>
+        </ul>
+     
       </div>
       
-      <CartWidget />
+      
 
       <button
         className="navbar-toggler"

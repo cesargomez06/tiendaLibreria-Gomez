@@ -8,10 +8,10 @@ const Item = ({ item }) => {
     return (
         <div className="col-md-6 border border-primary align-middle contenedor ">
            
-           <h3 className="text-light display-6 tipo-letra ">{item.name}</h3>
+           <h3 className="text-light display-6 tipo-letra ">{item.nombre}</h3>
            <div >
             
-            <img className="container-sm rounded col-md-8 " src={item.img} alt={item.name}/>
+            <img className="container-sm rounded col-md-8 " src={item.img} alt={item.nombre}/>
             
             <Link to={`/item/${item.id}` } className="ver-mas"> 
             Más info
