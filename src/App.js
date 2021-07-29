@@ -1,18 +1,19 @@
 import './App.css';
 import NavBar from './components/NavBar/nav-bar.jsx';
+import Cart from "../src/components/Cart/Cart";
 import React from "react";
-import ItemListContainer from './containers/ItemListContainer'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import {BrowserRouter, Switch, Route,} from 'react-router-dom';
-import ItemDetailContainer from './containers/ItemDetailContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { CartProvider } from './Context/CartContext';
-import Loader from 'react-spinners/ClipLoader';
-//import ItemDetail from './containers/ItemDetail.jsx';
 
 function App() {
   return (
     <CartProvider>
     <BrowserRouter>
-    <div className="App " value={{}}>
+
+    <div className="App " >
+
         <NavBar />
         <Switch>
           <Route exact path="/">
@@ -21,12 +22,15 @@ function App() {
 
           <Route exact path="/category/:categoryId">
             <ItemListContainer />
-            
           </Route>
-        
-        {/* <NavLink to="/categoria/1234" activeClassName="seleccionado">Categorias</NavLink> */}
 
-          <Route path="/item/:id" component={ItemDetailContainer}/> 
+          <Route path="/item/:itemId">
+            <ItemDetailContainer />
+          </Route> 
+
+          <Route path="/cart">
+              <Cart />
+          </Route>
            
         </Switch>
         <footer className="derechos"> Derechos reservados Cesar Gomez</footer>

@@ -1,8 +1,4 @@
 import { Link } from "react-router-dom";
-// import ItemDetailContainer from "../../containers/ItemDetailContainer";
-// import products from "../../mocks/product";
-// import product from "../../mocks/product";
-// import Card from "../card/card";
 import "./item.css";
 
 

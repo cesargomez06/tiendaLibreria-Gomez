@@ -1,4 +1,4 @@
-const products = [
+/*const products = [
     {id:1, name:"Cuaderno A4 Avon cuad.", category:"1", des:" Cuadernillo universitario 80h cuadriculado", price:150,stock:15, img:"https://res.cloudinary.com/cesargomez/image/upload/v1626534770/libreriayjugueteria/1_argk9i.png"},
     {id:2, name:"Sharpie x 17 Marcadores", category:"2", des:" Marcadores Sharpie set tropical 12 marcadores permanentes punta fina; + 5 tarjetas para colorear total 17 piezas", price:2000,stock:4, img:"https://res.cloudinary.com/cesargomez/image/upload/v1626534786/libreriayjugueteria/5_c8qroq.png"},
     {id:3, name:"Pack Resaltadores Pelikan ", category:"1", des:" Resaltadores Pelikan x 6 colores pastel", price:450,stock:20, img:"https://res.cloudinary.com/cesargomez/image/upload/v1626534774/libreriayjugueteria/4_hjhdtw.png"},

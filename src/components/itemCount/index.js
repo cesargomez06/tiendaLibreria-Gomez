@@ -1,21 +1,23 @@
-import React, {useContext, useEffect, useState } from "react";
-import { CartContext } from "../../Context/CartContext";
+import React, { useState } from "react";
 
-export function ItemCount ( { stock, count, setCount}) {
+export function ItemCount ( { stock, initial, onAdd}) {
     
-    /*useEffect(() => {
-       setCount(parseInt(initial));
-        return;
-    }, [initial]);*/
-    
-    const sumar = () => {
-        setCount (count + 1);
-    };
+   
+    const [count, setCount] = useState(initial);
 
     const restar = () => {
-        setCount(count - 1);
-    };
-    
+
+      setCount(count-1)
+  }
+  const sumar = () => {
+      if (count >= stock){
+          return
+      }
+      setCount(count+1) 
+  }
+  const add = () => {
+      onAdd(count)
+  }
     
     
 
@@ -24,24 +26,10 @@ export function ItemCount ( { stock, count, setCount}) {
     return (
         <div className=" flex-column align-content-strech align-items-center ">
           <div className="m-2 p-2 d-flex flex-row justify-content-between  border-secondary border rounded ">
-            <button
-              disabled={count <= 1}
-              className="btn btn-primary "
-              type="button"
-              onClick={restar}
-            >
-              -
-            </button>
+            <button disabled={count <= 1} className="btn btn-primary " type="button" onClick={restar}> - </button>
             <div>{count}</div>
-            <button
-              disabled={count >= stock}
-              className="btn btn-primary "
-              type="button"
-              onClick={sumar}
-            >
-              +
-            </button>
-           
+            <button disabled={count >= stock} className="btn btn-primary"type="button"onClick={sumar}> + </button>
+            <button disabled={count <= 0 || count > stock}  onClick={add} className="btn btn-primary"> Agregar al carrito </button>
           </div>
           
           
