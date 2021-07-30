@@ -12,13 +12,13 @@ export const NavBar = () => {
       <img className="menu-logo " src={logoLibreria} alt="logo de la libreria"/>
       </a>
       
-      <div className="collapse navbar-collapse menu  menu-enlaces" id="navbarNavAltMarkup">
-      <ul>
+      <div className="collapse navbar-collapse menu  menu-enlaces " id="navbarNavAltMarkup">
+      <ul >
           <NavLink to="/">
             <li>Inicio</li>
           </NavLink>
           <NavLink to="/category/escolar">
-            <li>Librería Escolar</li>
+            <li className="text-decoration-none">Librería Escolar</li>
             </NavLink>
           <NavLink to="/category/artistica">
             <li>Libreria artistica</li>

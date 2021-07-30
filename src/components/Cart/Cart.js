@@ -21,7 +21,7 @@ const Cart = () => {
     const generarOrden = () => {
 
         const db = getFirestore();
-        const ordersCol = db.collection("productos");
+        const ordersCol = db.collection("order");
 
         let orden = {}
         orden.date = firebase.firestore.Timestamp.fromDate(new Date());
@@ -33,11 +33,11 @@ const Cart = () => {
         orden.total = totalPrecio
         orden.items = cart.map(cartItem => {
             const id = cartItem.item.id;
-            const des = cartItem.item.des;
-            const autor = cartItem.item.autor;
+            const desc = cartItem.item.desc;
+            const nombre = cartItem.item.nombre;
             const cantidad = cartItem.quantity;
             const precio = cartItem.item.precio * cartItem.quantity;
-            return { id, des, autor, cantidad, precio }
+            return { id, desc, nombre, cantidad, precio }
         })
 
         ordersCol.add(orden)
@@ -144,7 +144,7 @@ const Cart = () => {
         </div>
 
         {ordenId ?             
-            <div>
+            <div className="text-light">
                 {name}, tu compra por un total de ${totalPrecio}.- fue procesada correctamente.<br/>
                 Tu numero de orden es: {ordenId} <br/>
                 Recibiras un correo en {email} con los detalles del envio.

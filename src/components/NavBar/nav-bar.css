@@ -18,10 +18,10 @@
     display: flex;
     align-items: center;
     list-style: none;
-    cursor:pointer;
+    
     text-decoration: none;
 }
-.dl, ol, ul, a:active {
+.menu-enlaces a:hover {
     text-decoration: none;
 }
 h1 {
@@ -76,25 +76,20 @@ nav img {
 .menu-carrito {
     width: 3rem;
 }
-header nav {
+.header nav {
     width: 30%;
     margin-right: 50px;
   }
   
-  header ul {
+.header ul {
     display: flex;
     justify-content: space-between;
     list-style: none;
   }
   
-  a {
-    text-decoration: none;
-    text-transform: uppercase;
-    display: inline;
-    
-  }
+
   
-  header {
+  .header {
     background-color: #212529;
     width: 100%;
     height: 100px;

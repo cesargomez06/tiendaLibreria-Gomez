@@ -17,10 +17,12 @@ const ItemDetailContainer = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [item, setItem] = useState([])
     const { itemId } = useParams()
-
+    
     useEffect(()=> {
+        
         getItems(itemId)
         .then((res) => {
+            setIsLoading(false)
             console.log('existe?', res.exists);
             if (res.exists){
                 setItem(res.data())
@@ -33,7 +35,7 @@ const ItemDetailContainer = () => {
 
     return (
         <Fragment>
-            {isLoading===false? <PacmanLoader type={"PacmanLoader"} color={"#007bff"} size={40}/>:  
+            {isLoading===true? <PacmanLoader type={"PacmanLoader"} color={"#007bff"} size={40}/>:  
             <ItemDetail item={{id: itemId, ...item}}  />}
         </Fragment>
     );

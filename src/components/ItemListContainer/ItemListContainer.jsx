@@ -24,14 +24,16 @@ const ItemListContainer = ({ greeting }) => {
         prom.then((snaptshot) => {
             console.log("Se consultaron los datos");
             console.log(snaptshot);
-
+            setIsLoading(false)
             if(snaptshot.size > 0){
                 console.log(snaptshot.docs.map(doc => doc.data()));
                 console.log(snaptshot.docs.map(doc => doc.id));
                 setItems(snaptshot.docs.map(doc => {
                     return {id: doc.id, ...doc.data()}
+                    
                 }));
             }
+            
             // setItems(resultado)
         })
     }, [categoryId]);
@@ -40,7 +42,7 @@ const ItemListContainer = ({ greeting }) => {
     return(
         <div className="container bg-dark " style={{display:""}} >
            <h1 className="neon" margin={2}>{greeting}</h1>
-           {isLoading===false? <PacmanLoader margin={1} type={"PacmanLoader"}color={"#007bff"} size={35}/>:<ItemList  items={items}/>    }
+           {isLoading===true? <PacmanLoader margin={1} type={"PacmanLoader"}color={"#007bff"} size={35}/>:<ItemList  items={items}/>    }
            
         </div>
 
