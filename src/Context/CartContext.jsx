@@ -2,6 +2,10 @@ import React, { useState, useEffect} from 'react';
 
 export const CartContext = React.createContext([]);
 
+if (JSON.parse(localStorage.getItem('cart')) === null) {
+	localStorage.setItem('cart', JSON.stringify([]))
+}
+
 export const CartProvider = ({children}) => {
 
     const [cart, setCart] = useState([])
@@ -24,6 +28,8 @@ export const CartProvider = ({children}) => {
 
     
 	const addItem = (item, quantity) => {
+        localStorage.setItem('cart', JSON.stringify(cart))
+		setCart(JSON.parse(localStorage.getItem('cart')))
 		if (!isInCart(item.id)) {
 			const newCart = [...cart, { item: item, quantity: quantity }];
 			setCart(newCart);
@@ -46,6 +52,9 @@ export const CartProvider = ({children}) => {
     const removeItem = (itemId) => {
         const newCart = cart.filter(e => e.item.id !== itemId)
         setCart(newCart)
+        localStorage.setItem('cart', JSON.stringify(cart))
+		setCart(JSON.parse(localStorage.getItem('cart')))
+		
     } // Remover un item del cart por usando su id
     
     const clear = () => {

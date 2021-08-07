@@ -3,19 +3,30 @@ import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import { PacmanLoader } from "react-spinners";
 import { getFirestore } from '../../firebase/firebase';
+import "./itemListContainer.css";
 
 const ItemListContainer = ({ greeting }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [items, setItems] = useState([])
     const {categoryId} = useParams()
-
-    
+    const [taskItems, setTaskItems]= useState([])
+    const[showCompleted,setShowCompleted]=useState([])
+    console.log(showCompleted)
 
     useEffect(() => {
 
         const db = getFirestore();
         const itemsCollection = db.collection('productos');
 
+        let data = localStorage.getItem('task');
+        if (data != null ){
+            setTaskItems(JSON.parse(data));
+        }else{
+            setTaskItems([{
+                name:items,done:false
+            }])
+        }
+        setShowCompleted(true);
         console.log(itemsCollection);
 
         const filtrado = categoryId? itemsCollection.where('category', '==', categoryId) : itemsCollection
@@ -36,13 +47,15 @@ const ItemListContainer = ({ greeting }) => {
             
             // setItems(resultado)
         })
-    }, [categoryId]);
-   
+    }, [categoryId,items]);
+   useEffect(() => {
+       localStorage.setItem('tasks',JSON.stringify(taskItems));
+   }, [taskItems]);
     
     return(
-        <div className="container bg-dark " style={{display:""}} >
+        <div className="container bg-dark align-center" style={{display:""}} >
            <h1 className="neon" margin={2}>{greeting}</h1>
-           {isLoading===true? <PacmanLoader margin={1} type={"PacmanLoader"}color={"#007bff"} size={35}/>:<ItemList  items={items}/>    }
+           {isLoading===true? <PacmanLoader timeout={5000} className="loader" margin={1} type={"PacmanLoader"}color={"#007bff"} size={35}/>:<ItemList  items={items}/>    }
            
         </div>
 

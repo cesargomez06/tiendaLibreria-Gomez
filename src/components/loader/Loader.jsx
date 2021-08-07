@@ -9,6 +9,7 @@ const override = css`
   margin: 5 auto;
   border-color: white;
   
+  
 `;
 
 function Loader() {
@@ -17,7 +18,7 @@ function Loader() {
   
 
   return (
-    <div className="sweet-loading">
+    <div className="sweet-loading ">
       <button onClick={() => setLoading(!loading)}>Toggle Loader</button>
       <input value={color} onChange={(input) => setColor(input.target.value)} placeholder="Color of the loader" />
 

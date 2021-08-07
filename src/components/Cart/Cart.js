@@ -46,8 +46,7 @@ const Cart = () => {
                 // mostrarOrden();
             })
 
-        clear();  
-        
+        clear();    
     }
 
     // let ordenStatus = false;
