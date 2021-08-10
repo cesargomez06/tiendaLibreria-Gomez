@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "../Item/item.css";
 
 export function ItemCount ( { stock, initial, onAdd}) {
     
@@ -25,7 +25,7 @@ export function ItemCount ( { stock, initial, onAdd}) {
     
 
     return (
-        <div className=" count flex-column align-content-strech align-items-center container ">
+        <div className="contador flex-column align-content-strech align-items-center container ">
           <div className="m-2 p-2 d-flex flex-row justify-content-between  border-secondary border rounded align-items-center">
             <button disabled={count <= 1} className="btn btn-primary " type="button" onClick={restar}> - </button>
             <div>{count}</div>

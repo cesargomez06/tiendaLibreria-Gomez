@@ -4,7 +4,7 @@
     font-family: 'Roboto', sans-serif;
 }
 .menu-logo {
-    width: 12rem;
+    width: 15rem;
     margin-right: 15rem;
 }
 .menu{
@@ -86,9 +86,6 @@ nav img {
     justify-content: space-between;
     list-style: none;
   }
-  
-
-  
   .header {
     background-color: #212529;
     width: 100%;

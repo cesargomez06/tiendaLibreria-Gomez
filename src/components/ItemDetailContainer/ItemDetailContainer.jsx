@@ -36,7 +36,7 @@ const ItemDetailContainer = () => {
     return (
         <Fragment>
             {isLoading===true? <PacmanLoader type={"PacmanLoader"} color={"#007bff"} size={40}/>:  
-            <ItemDetail item={{id: itemId, ...item}}  />}
+            <ItemDetail  item={{id: itemId, ...item}}  />}
         </Fragment>
     );
 }
