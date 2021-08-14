@@ -67,7 +67,7 @@ const Cart = () => {
 
 
 
-                {!cart.length ? <h2>No hay Items en el carrito<br /><Link to="/">Ir al Home</Link></h2>
+                {!cart.length ? <h2>No hay Items en el carrito<br /><Link to="/">Volver</Link></h2>
                     : (
                         <>
                             {cart.map(cartItem =>
@@ -144,7 +144,7 @@ const Cart = () => {
 
         {ordenId ?             
             <div className="text-light">
-                {name}, tu compra por un total de ${totalPrecio}.- fue procesada correctamente.<br/>
+                {name}, tu compra fue procesada correctamente.<br/>
                 Tu numero de orden es: {ordenId} <br/>
                 Recibiras un correo en {email} con los detalles del envio.
             </div>

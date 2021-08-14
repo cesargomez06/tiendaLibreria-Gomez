@@ -29,7 +29,7 @@ const ItemDetail = ({ item }) => {
                 <div className="d-flex-rap align-items-center">
                 <img className="img-fluid col-md-6"src={item?.img} alt={item.name}/>
                 { count === 0 ? 
-                <ItemCount className="contador"initial={1} stock={5} onAdd={addHandler} />
+                <ItemCount className="contador"initial={1} stock={item.stock} onAdd={addHandler} />
                 :
                  <Link to="/cart">
                  <button className="btn btn-primary"> Terminar mi compra </button>
