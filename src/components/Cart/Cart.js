@@ -67,7 +67,7 @@ const Cart = () => {
 
 
 
-                {!cart.length ? <h2>No hay Items en el carrito<br /><Link to="/">Volver</Link></h2>
+                {!cart.length ? <h2>No hay Items en el carrito <br /><Link className="btn btn-primary" to="/">Volver a la tienda</Link></h2>
                     : (
                         <>
                             {cart.map(cartItem =>
@@ -107,10 +107,14 @@ const Cart = () => {
                     <h2 className="carrito__totalCalculo--h">${totalPrecio}</h2>
                 </div>
             </div>
-
+            {!cart.length ?                   
             <div className="carrito__bottom flex flex-jc-c flex-ai-c">
-                <button className="carrito__bottomVaciar boton btn btn-primary" onClick={clear}>Vaciar Carrito</button>
+            <button className="carrito__bottomVaciar boton btn btn-primary" onClick={clear}>Vaciar Carrito</button> 
+               
             </div>
+            : (
+
+            
 
             <div className="carrito__form">
                 <form action="#" className="">
@@ -133,13 +137,14 @@ const Cart = () => {
                         </label>
                     </div>
                 </form>
-
-            </div>
-
-
-            <div className="carrito__bottom flex flex-jc-c flex-ai-c">
+                <div className="carrito__bottom flex flex-jc-c flex-ai-c">
                 <button className="carrito__bottomCheckout botonCTA btn btn-success" onClick={generarOrden}>Finalizar Compra</button>
             </div>
+            </div>
+             )}
+
+
+            
         </div>
 
         {ordenId ?             
@@ -150,6 +155,7 @@ const Cart = () => {
             </div>
             : null
         }
+       
     </div>
 )
 

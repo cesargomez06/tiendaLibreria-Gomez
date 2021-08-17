@@ -54,8 +54,10 @@ const ItemListContainer = ({ greeting }) => {
     
     return(
         <div className="container bg-dark align-center" style={{display:""}} >
-           <h1 className="neon" margin={2}>{greeting}</h1>
-           {isLoading===true? <PacmanLoader timeout={5000} className="loader" margin={1} type={"PacmanLoader"}color={"#007bff"} size={35}/>:<ItemList  items={items}/>    }
+           <div className="d-flex-rap">
+                <h1 className="neon" margin={2}>{greeting}</h1>
+                {isLoading===true?   <PacmanLoader timeout={5000} className="loader" margin={1} type={"PacmanLoader"}color={"#007bff"} size={40}/>:<ItemList  items={items}/> } 
+            </div> 
            
         </div>
 

@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import {Link} from "react-router-dom";
-// import Item from "../components/Item/Item";
 import "../Item/item.css"
 import ItemCount from "../itemCount";
 import { CartContext } from "../../Context/CartContext";
@@ -23,13 +22,17 @@ const ItemDetail = ({ item }) => {
             
             <div className="container  col-md-8 card-body text-light  ">
                 <h3 className="card-title font-weight-bold tipo-letra">{item?.nombre}</h3>
-                <p className="card-text">Descripción:{item?.desc}</p>
-                <p className="card-text">Precio: ${item?.precio}</p>
-                <p className="card-text">Stock: {item?.stock}</p>
-                <div className="d-flex-rap align-items-center">
+                
+                <p className="card-text">Descripción: {item?.desc}</p>
+                <div className="d-inline-flex">
+                <p className="card-text m-2">Precio: ${item?.precio}</p>
+                <p className="card-text m-2">Stock: {item?.stock}</p>
+                </div>
+                
+                <div className="contador">
                 <img className="img-fluid col-md-6"src={item?.img} alt={item.name}/>
                 { count === 0 ? 
-                <ItemCount className="contador"initial={1} stock={item.stock} onAdd={addHandler} />
+                <ItemCount initial={1} stock={item.stock} onAdd={addHandler} />
                 :
                  <Link to="/cart">
                  <button className="btn btn-primary"> Terminar mi compra </button>
@@ -40,8 +43,8 @@ const ItemDetail = ({ item }) => {
               
             </div>
                 
-            <Link to="/" className=" container text-light m-2 text-purple-500 bg-transparent border border-solid border-purple-500 hover:bg-purple-500 hover:text-white active:bg-purple-500 font-bold uppercase px-8 py-1 rounded-full outline-none focus:outline-none mr-1 mb-1">
-                <i className="fas fa-home" >  Home </i> 
+            <Link to="/" className="home">
+                <button type="button" className="fas btn btn-primary" >  Volver a inicio </button> 
             </Link>
             
         </div>

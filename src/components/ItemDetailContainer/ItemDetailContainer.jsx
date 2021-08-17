@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
         getItems(itemId)
         .then((res) => {
             setIsLoading(false)
-            console.log('existe?', res.exists);
+            
             if (res.exists){
                 setItem(res.data())
                         }
@@ -35,7 +35,7 @@ const ItemDetailContainer = () => {
 
     return (
         <Fragment>
-            {isLoading===true? <PacmanLoader type={"PacmanLoader"} color={"#007bff"} size={40}/>:  
+            {isLoading===true? <div className="m-5 p-5"> <PacmanLoader type={"PacmanLoader"} color={"#007bff"} size={40}/></div> :  
             <ItemDetail  item={{id: itemId, ...item}}  />}
         </Fragment>
     );

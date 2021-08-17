@@ -32,7 +32,19 @@ a.ver-mas{
     background-color: #4bd1e9;
     text-decoration: none;
   }
-  
+.home {
+    color: white;
+    font-family: 'Montserrat Alternates', sans-serif;
+    
+ }
+.home .fas {
+     background-color: #FF914D;
+     border: black;
+ }
+.contador {
+     padding: 1%;
+     
+ }
   @media (max-width:768px){
     .contenedor{margin: 20px;}
     .phone{margin:30px;}

@@ -13,7 +13,7 @@ const Item = ({ item }) => {
             
             <img className="container-sm rounded col-md-8 " src={item.img} alt={item.nombre}/>
             
-            <Link to={`/item/${item.id}` } className="ver-mas"> 
+            <Link to={`/item/${item.id}` } className="ver-mas d-inline-flex m-2 p-2"> 
             Más info
             </Link>
             </div>
