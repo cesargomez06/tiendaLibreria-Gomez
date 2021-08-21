@@ -4,7 +4,7 @@ import "./contacto.css"
 export default function Contacto() {
     return (
         <form className="formulario">
-            <h3>Contactanos</h3>
+            <h3>Dejanos tu consulta</h3>
         <label className="label" type="text">
           Nombre y apellido:
           <input type="text" name="name" />

@@ -45,6 +45,23 @@ a.ver-mas{
      padding: 1%;
      
  }
+.home .sumaResta{
+    margin: 0.5rem;
+    width: 5vh;
+    height: 5vh;
+    color: white;     
+    background-color: #FF914D;
+    border-radius: 100%;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    border: white 1px solid;
+
+}
+.home .agregar{
+    background-color: #FF914D;
+     border: black;
+}
   @media (max-width:768px){
     .contenedor{margin: 20px;}
     .phone{margin:30px;}

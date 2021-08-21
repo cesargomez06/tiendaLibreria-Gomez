@@ -51,10 +51,7 @@ export const CartProvider = ({children}) => {
     
     const removeItem = (itemId) => {
         const newCart = cart.filter(e => e.item.id !== itemId)
-        setCart(newCart)
-        localStorage.setItem('cart', JSON.stringify(cart))
-		setCart(JSON.parse(localStorage.getItem('cart')))
-		
+        setCart(newCart)		
     } // Remover un item del cart por usando su id
     
     const clear = () => {

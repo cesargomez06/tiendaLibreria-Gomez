@@ -4,7 +4,9 @@ import { CartContext} from "../../Context/CartContext"
 import firebase from "firebase/app";
 import "firebase/firestore"
 import { getFirestore } from "../../firebase/firebase"
+import CartFinal from "./CartFinal.jsx";
 import "./cart.css";
+
 
 
 const Cart = () => {
@@ -55,6 +57,14 @@ const Cart = () => {
     //     ordenStatus = true
     // }
 
+    /*itemsToCheck.get().then((query)=>{
+        const batch= database.batch();
+        const outOfStockItems=[];
+        
+
+
+    })*/
+
 
 
     return (
@@ -67,7 +77,11 @@ const Cart = () => {
 
 
 
-                {!cart.length ? <h2>No hay Items en el carrito <br /><Link className="btn btn-primary" to="/">Volver a la tienda</Link></h2>
+                {!cart.length ? <div className="home"><h2 >No hay Items en el carrito</h2>
+                <Link to="/">
+                <button type="button" className="home fas btn btn-primary" >Volver a la tienda</button>
+                </Link>
+                </div>
                     : (
                         <>
                             {cart.map(cartItem =>
@@ -77,10 +91,10 @@ const Cart = () => {
                                         <div className="carrito__itemImagenDiv">
                                             <img src={cartItem.item.img} alt="Tapa" className="carrito__itemImagen" />
                                         </div>
-                                        <div className="carrito__itemDescripcion">
+                                        <div className="carrito__itemDescripcion home">
                                             <h3 className="carrito__itemTitulo"> {cartItem.item.nombre} </h3>
                                             <p className="carrito__itemAutor"> {cartItem.item.desc} </p>
-                                            <button onClick={() => removeItem(cartItem.item.id)} className="carrito__productoEliminar btn btn-primary"> Eliminar </button>
+                                            <button onClick={() => removeItem(cartItem.item.id)} className="carrito__productoEliminar fas btn btn-primary"> Eliminar </button>
                                         </div>
 
                                         <div className="carrito__Cantidad flex flex-jc-c flex-ai-c">
@@ -92,13 +106,7 @@ const Cart = () => {
                                     </div>
                                 </div>
                             )}
-                        </>
-                    )}
-            </div>
-
-
-
-            <div className="carrito__total flex flex-jc-sb flex-ai-c">
+                            <div className="carrito__total flex flex-jc-sb flex-ai-c">
                 <div className="carrito__totalTitulo">
                     <h3>Total</h3>
                 </div>
@@ -107,17 +115,18 @@ const Cart = () => {
                     <h2 className="carrito__totalCalculo--h">${totalPrecio}</h2>
                 </div>
             </div>
-            {!cart.length ?                   
-            <div className="carrito__bottom flex flex-jc-c flex-ai-c">
-            <button className="carrito__bottomVaciar boton btn btn-primary" onClick={clear}>Vaciar Carrito</button> 
-               
-            </div>
-            : (
-
             
-
+            <div className="carrito__bottom flex flex-jc-c flex-ai-c home">
+            <button className="carrito__bottom Vaciar home fas btn btn-primary" onClick={clear}>Vaciar Carrito</button> 
+            <h3 className="mt-5">
+                    Completa el formulario con tus datos para confirmar la compra
+                </h3>  
+            </div>             
+ 
             <div className="carrito__form">
+           
                 <form action="#" className="">
+                
                     <div>
                         <label>
                             Nombre:
@@ -139,20 +148,24 @@ const Cart = () => {
                 </form>
                 <div className="carrito__bottom flex flex-jc-c flex-ai-c">
                 <button className="carrito__bottomCheckout botonCTA btn btn-success" onClick={generarOrden}>Finalizar Compra</button>
+                </div>
             </div>
+                        </>
+                    )}
             </div>
-             )}
+
+
+
+            
+             
 
 
             
         </div>
+                                
+        {ordenId ? 
 
-        {ordenId ?             
-            <div className="text-light">
-                {name}, tu compra fue procesada correctamente.<br/>
-                Tu numero de orden es: {ordenId} <br/>
-                Recibiras un correo en {email} con los detalles del envio.
-            </div>
+            <CartFinal name={name} ordenId={ordenId} email={email}/>
             : null
         }
        
