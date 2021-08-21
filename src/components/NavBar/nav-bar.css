@@ -16,9 +16,9 @@
 }
 .dl, ol, ul {
     display: flex;
+    flex-flow: wrap;
     align-items: center;
     list-style: none;
-    
     text-decoration: none;
 }
 .menu-enlaces a:hover {

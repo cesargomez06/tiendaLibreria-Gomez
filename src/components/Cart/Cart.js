@@ -18,7 +18,7 @@ const Cart = () => {
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [ordenId, setOrdenId] = useState('');
-
+    const 
 
     const generarOrden = () => {
 
@@ -45,28 +45,12 @@ const Cart = () => {
         ordersCol.add(orden)
             .then((IdDocumento) => {
                 setOrdenId(IdDocumento.id);
-                // mostrarOrden();
+                
             })
 
         clear();    
     }
-
-    // let ordenStatus = false;
     
-    // const mostrarOrden = () => {
-    //     ordenStatus = true
-    // }
-
-    /*itemsToCheck.get().then((query)=>{
-        const batch= database.batch();
-        const outOfStockItems=[];
-        
-
-
-    })*/
-
-
-
     return (
         <div>
         <div className="carrito_lista">
@@ -94,7 +78,7 @@ const Cart = () => {
                                         <div className="carrito__itemDescripcion home">
                                             <h3 className="carrito__itemTitulo"> {cartItem.item.nombre} </h3>
                                             <p className="carrito__itemAutor"> {cartItem.item.desc} </p>
-                                            <button onClick={() => removeItem(cartItem.item.id)} className="carrito__productoEliminar fas btn btn-primary"> Eliminar </button>
+                                            <button onClick={() => removeItem(cartItem.item.id)} className="carrito__productoEliminar fas home btn btn-primary"> Eliminar </button>
                                         </div>
 
                                         <div className="carrito__Cantidad flex flex-jc-c flex-ai-c">
@@ -123,8 +107,7 @@ const Cart = () => {
                 </h3>  
             </div>             
  
-            <div className="carrito__form">
-           
+            <div className="carrito__form"> 
                 <form action="#" className="">
                 
                     <div>
@@ -153,22 +136,11 @@ const Cart = () => {
                         </>
                     )}
             </div>
-
-
-
-            
-             
-
-
-            
-        </div>
-                                
+        </div>                   
         {ordenId ? 
-
             <CartFinal name={name} ordenId={ordenId} email={email}/>
             : null
         }
-       
     </div>
 )
 

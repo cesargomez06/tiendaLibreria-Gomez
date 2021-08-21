@@ -14,7 +14,7 @@ const Item = ({ item }) => {
             <img className="container-sm rounded col-md-8 " src={item.img} alt={item.nombre}/>
             
             <Link to={`/item/${item.id}` } > 
-            <button type="button" className="home fas btn btn-primary "> Más info </button>
+            <button type="button" className="home fas btn btn-primary mt-2"> Más info </button>
             </Link>
             </div>
         </div>
