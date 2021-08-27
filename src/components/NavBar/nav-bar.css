@@ -4,7 +4,7 @@
     font-family: 'Roboto', sans-serif;
 }
 .menu-logo {
-    width: 15rem;
+    width: 12rem;
     margin-right: 15rem;
 }
 .menu{
@@ -32,7 +32,6 @@ h1 {
 }
 .neon {
     font-size: 1.5rem;
-    padding: 1rem;
     margin: 3rem;
 	color: #fff;
 	text-shadow:
@@ -71,7 +70,7 @@ align-content: center;
     margin-left: 35rem;
 }
 nav img {
-    width: 5vh;
+    width: 7vh;
 }
 .menu-carrito {
     width: 3rem;

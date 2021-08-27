@@ -8,8 +8,8 @@ const CartFinal = function ({ name, ordenId, email }) {
         <h4 className="unico">
           {name}, tu compra fue procesada correctamente.
         </h4>
-        <h4>Tu numero de orden es: {ordenId} </h4>
-        <h4>Recibiras un correo en {email} con los detalles del envío.</h4>
+        <h4>Tu número de orden es: {ordenId} </h4>
+        <h4>Recibirás un correo en {email} con los detalles del envío.</h4>
         <Link to="/">
           <button class="close" className="volver">
             &times;

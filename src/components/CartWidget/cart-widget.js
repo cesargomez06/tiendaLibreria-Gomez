@@ -14,11 +14,7 @@ export const CartWidget = () => {
             
         <img src={ShoppingCart} alt="Carrito" className="menu-carrito" />
         {totalItems ? <span> ({totalItems})</span> : null }
-    
-           {/* <img src={ShoppingCart} className="menu-carrito" alt="Menu"/>
-            <p> Cantidad: {cantidadCarrito()}</p>
-            <p>Total: ${totalCarrito()}</p>*/}
-            
+
         </div>
     
     );

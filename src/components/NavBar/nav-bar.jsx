@@ -6,37 +6,41 @@ import CartWidget from "../CartWidget/cart-widget";
 import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
-    return (
-      <nav className="menu navbar navbar-expand-lg navbar-light">
-      <a  href="/">
-      <img className="menu-logo " src={logoLibreria} alt="logo de la libreria"/>
+  return (
+    <nav className="menu navbar navbar-expand-lg navbar-light">
+      <a href="/">
+        <img
+          className="menu-logo "
+          src={logoLibreria}
+          alt="logo de la libreria"
+        />
       </a>
-      
-      <div className="collapse navbar-collapse menu  menu-enlaces " id="navbarNavAltMarkup">
-      <ul >
+
+      <div
+        className="collapse navbar-collapse menu  menu-enlaces "
+        id="navbarNavAltMarkup"
+      >
+        <ul>
           <NavLink to="/">
             <li>Inicio</li>
           </NavLink>
           <NavLink to="/category/escolar">
             <li className="text-decoration-none">Librería Escolar</li>
-            </NavLink>
+          </NavLink>
           <NavLink to="/category/artistica">
-            <li>Libreria artistica</li>
-            </NavLink>
+            <li>Librería artística</li>
+          </NavLink>
           <NavLink to="/category/juguetes">
             <li>Juguetes</li>
-            </NavLink>
+          </NavLink>
           <NavLink to="/contacto">
             <li>Contacto</li>
-            </NavLink>
+          </NavLink>
           <NavLink to="/cart">
             <CartWidget />
-            </NavLink>
+          </NavLink>
         </ul>
-     
       </div>
-      
-      
 
       <button
         className="navbar-toggler"
@@ -50,13 +54,7 @@ export const NavBar = () => {
         <span className="navbar-toggler-icon"></span>
       </button>
     </nav>
-        
-      
-        
-    );
-   
+  );
 };
 
 export default NavBar;
-
-

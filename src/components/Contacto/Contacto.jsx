@@ -10,7 +10,7 @@ export default function Contacto() {
           <input type="text" name="name" />
         </label>
         <label className="label" type="text">
-          Pais:
+          País:
           <input type="text" name="pais" />
         </label>
         <label className="label" type="text">

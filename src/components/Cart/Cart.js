@@ -52,7 +52,7 @@ const Cart = () => {
         <div className="carrito__listaContenedor">
           {!cart.length ? (
             <div className="home">
-              <h2>No hay Items en el carrito</h2>
+              <h2>No hay items en el carrito</h2>
               <Link to="/">
                 <button type="button" className="home fas btn btn-primary">
                   Volver a la tienda
@@ -119,16 +119,17 @@ const Cart = () => {
                   Vaciar Carrito
                 </button>
                 <h3 className="mt-5">
-                  Completa el formulario con tus datos para confirmar la compra
+                  Completá el formulario con tus datos para confirmar la compra
                 </h3>
               </div>
 
               <div className="carrito__form">
                 <form action="#" className="">
                   <div>
-                    <label>
+                    <label for="choose">
                       Nombre:
                       <input
+                        id="choose"
                         type="text"
                         value={name}
                         onInput={(e) => setName(e.target.value)}
@@ -138,7 +139,7 @@ const Cart = () => {
                   </div>
                   <div>
                     <label>
-                      Telefono:
+                      Teléfono:
                       <input
                         type="text"
                         value={phone}
@@ -158,15 +159,14 @@ const Cart = () => {
                       />
                     </label>
                   </div>
-                </form>
-                <div className="carrito__bottom flex flex-jc-c flex-ai-c">
                   <button
+                    required
                     className="carrito__bottomCheckout botonCTA btn btn-success"
                     onClick={generarOrden}
                   >
                     Finalizar Compra
                   </button>
-                </div>
+                </form>
               </div>
             </>
           )}

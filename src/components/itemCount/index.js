@@ -19,10 +19,6 @@ export function ItemCount ( { stock, initial, onAdd}) {
   const add = () => {
       onAdd(count)
   }
-    
-    
-
-    
 
     return (
           <div className="home d-inline-flex p-2 m-2 justify-content-center border border-secondary align-items-center">

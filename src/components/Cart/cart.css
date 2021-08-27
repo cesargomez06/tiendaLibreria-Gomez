@@ -35,6 +35,7 @@
   .carrito__bottomCheckout {
     margin-bottom: 50px;
   }
+ 
   
   .carrito__bottomCheckoutFinished {
     position: fixed;
@@ -141,7 +142,7 @@
 .cerrar-modal{
   margin-right: 3%;
   margin-left: 3%;
-  margin-top:30%;
+  margin-top: 20%;
 }
 .volver{
   font-size:3.5vh;
@@ -156,4 +157,13 @@
 .fas {
   background-color: #FF914D;
   border: black;
+}
+input:invalid:required {
+  background-image: linear-gradient(to right, pink, lightgreen);
+}
+input:valid {
+  border: 1px solid black;
+}
+input:invalid {
+  border: 1px dashed red;
 }
