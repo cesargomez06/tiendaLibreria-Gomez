@@ -8,8 +8,11 @@ Descripción: Ecommerce de productos de librería y juguetería realizado con Re
 
 ## Librerías usadas:
 
+- ReactJS
+- Create React App
+- React Router DOM
 - Bootstrap
-- Firebase
+- Firebase's Firestore
 
 ## Para su prueba
 
